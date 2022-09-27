@@ -4,7 +4,7 @@ import React from 'react';
 const Hero = (props: { headline: string; body: string; buttonUrl: string; buttonText: string; secondButtonText: string; secondButtonUrl: string; }) => {
   return (
     <>
-      <div className="h-full bg-gradient-to-t from-brandPrimary-900 to-brandPrimary-600 px-0 pt-32 mx-auto mt-px text-center md:max-w-none ">
+      <div className="h-full bg-gradient-to-t from-brandPrimary-600 to-brandPrimary-900 px-0 pt-32 mx-auto mt-px text-center md:max-w-none ">
             <h1 className="text-5xl font-bold leading-none tracking-tight text-center text-indigo-50 md:text-center "><span className="inline md:block">{props.headline}</span> </h1>
             <div className=" mx-auto mt-5 px-20 text-lg text-indigo-200 md:mt-8 text-center sm:text-sm">{props.body}</div>
             <div className="flex flex-col justify-center items-center mt-8 px-24 text-center md:flex-row">

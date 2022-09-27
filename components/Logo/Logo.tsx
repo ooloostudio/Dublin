@@ -12,13 +12,13 @@ const Logo = (props: { size: string }) => {
   } else if (props.size === 'small') {
     logoElement = (
       <a href="/">
-        <img src={logo} className="h-9" />
+        <img src={logo} className="h-8 w-8" />
       </a>
     );
   } else {
     logoElement = (
       <a href="/">
-        <img src={logo} className="h-11" />
+        <img src={logo} className="h-16 w-16" />
       </a>
     );
   }
