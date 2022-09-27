@@ -1,112 +1,94 @@
 import React from 'react';
 import { useState } from 'react';
 import Logo from '../Logo/Logo';
-import dropDownOpen from '../../renderer/dropDownOpen.svg';
 import Avatar from '../Avatar/Avatar';
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid'
+import { XCircleIcon } from '@heroicons/react/24/solid'
+import { CurrentUser } from '../../types';
 
 export default function CurrentUserNavBar() {
   const [navbar, setNavbar] = useState(false);
 
-  return (
-    <nav className="w-full bg-transparent py-5 fixed z-40">
-      <div className="container justify-between px-4 md:items-center md:flex">
-        <div>
-          <div className="flex items-center justify-between md:block">
-            {/* logo */}
-            <div className="">
-              <Logo size="" />
-            </div>
-            <div className="md:hidden"></div>
-          </div>
-        </div>
-        <div className={`flex ml-8 my-auto space-x-6 md:block ${navbar ? 'block' : 'hidden'}`}>
-          <ul className="items-center justify-between space-y-3 md:space-y-0 md:flex md:space-x-6 w-full">
-            <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 py-1.5">
-              <a href="/dashboard">My Dashboard</a>
-            </li>
-            <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 py-2">
-              <a href="/catalog">Catalog</a>
-            </li>
-            <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 py-2">
-              <a href="/support">Help</a>
-            </li>
-            <hr></hr>
-          </ul>
-        </div>
 
-        <div className="hidden md:block">
-          {navbar ? (
-            <button id="icon" type="submit" className="block" onClick={() => setNavbar(!navbar)}>
-              <div className="flex items-center space-x-3 mr-3">
-                <Avatar size="" />
-                <img src={dropDownOpen} />
-                
-              </div>
-            </button>
-          ) : (
-            <button id="icon" type="submit" className="block" onClick={() => setNavbar(!navbar)}>
+  return (
+    <nav className="w-full bg-transparent mx-auto block font-sans">
+      <div className="w-full py-5 flex items-center justify-between px-8 fixed z-40 mx-auto">
+        {/* logo */}
+        <Logo size="" />
+        <button id="icon" type="submit" className="block" onClick={() => setNavbar(!navbar)}>
               <div className="flex items-center -space-x-2">
                 <Avatar size="" />
-                <Bars3CenterLeftIcon className="h-10 w-10 rounded-full p-2 text-white bg-brandPrimary-900"/>
+                <Bars3CenterLeftIcon className="h-10 w-10 rounded-full p-2 text-brandPrimary-50 bg-brandPrimary-900 border border-brandPrimary-600"/>
+                
               </div>
-            </button>
-          )}
-        </div>
+        </button>
       </div>
-      {/* dropdown menu */}
+      {/*full screen menu */}
       <div
         className={`${
           navbar ? 'block' : 'hidden'
-        } z-10 absolute right-0 p-5 mt-6 w-96 rounded-md shadow-lg bg-white`}
+        } z-50 fixed transition-opacity right-0 px-8 py-5 w-full h-full bg-brandPrimary-900 text-brandPrimary-50`}
       >
-        <div className="">
-          <ul className="space-y-2">
-            <div className="flex py-5">
-              <Avatar size="small" />
-              <div className="mx-3 my-auto">
-                <button className="hover:text-blue-700">
-                  <a href="/learn/profile">My Profile</a>
-                </button>
+        <div className="flex w-full justify-between   pb-12">
+        <Logo size="" />
+        <button id="icon" type="submit" className="block" onClick={() => setNavbar(!navbar)}>
+              <div className=" space-x-3 mr-3">
+                
+                <XCircleIcon className="h-10 w-10 rounded-full  bg-brandPrimary-600"/>
+               
+              
               </div>
-            </div>
-            <hr></hr>
-            <a href="/learn/profile">
-              <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 pt-4 pb-2">
-               My Dashboard
-              </li>
-            </a>
-            <a href="/learn/profile">
-              <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 pt-4 pb-2">
+          </button>
+          </div>
+          <ul className="flex-col px-2">
+            <a href="/catalog">
+              <li className="text-2xl font-bold p-8 py-4 rounded-md hover:bg-brandPrimary-600">
                 Explore Full Catalog
               </li>
             </a>
-            <a href="/learn/profile">
-              <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 pt-4 pb-2">
-                Help
+            <a href="/catalog">
+              <li className="text-2xl font-bold p-8 py-4 rounded-md hover:bg-brandPrimary-600">
+                  Certifications
               </li>
-            </a>
-            <a href="/learn/profile">
-              <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 pt-4 pb-2">
-                Account
-              </li>
-            </a>
-            <a href="/transcript">
-              <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 py-2">Transcript</li>
             </a>
             <a href="/support">
-              <li className="md:hover:bg-white hover:bg-slate-100 rounded pl-2 pt-2 pb-4">
-                Support
+              <li className="text-2xl font-bold p-8 py-4 rounded-md hover:bg-brandPrimary-600">
+                Help Support
               </li>
             </a>
-            <hr></hr>
-            <a href="/signout">
-              <div className="text-center pt-5 text-sm text-blue-900 hover:text-blue-700">
-                Sign out
+ 
+            <hr className=' border-brandPrimary-600 my-4'></hr>
+            <div className="flex flex-row space-x-2">
+              <div className=' pt-6'>
+                <Avatar size="" />
+              </div>  
+              <div className="flex flex-col w-full">            
+                <a href="/dashboard">
+                  <li className="text-2xl font-bold p-8 py-4 rounded-md hover:bg-brandPrimary-600">
+                  My Dashboard
+                  </li>
+                </a>
+                <a href="/transcript">
+                  <li className="text-2xl font-bold p-8  py-4 rounded-md hover:bg-brandPrimary-600">
+                    My Transcript
+                  </li>
+                </a>
+                <a href="/signout">
+                  <li className="text-2xl font-bold p-8  py-4 rounded-md hover:bg-brandPrimary-600">
+                    Edit my Profile
+                  </li>
+                </a>
+                <a href="/signout">
+                  <li className="text-lg font-light p-8  py-4 rounded-md hover:bg-brandPrimary-600">
+                    Sign out
+                  </li>
+                </a>
+
               </div>
-            </a>
+            </div>  
+
           </ul>
-        </div>
+        
       </div>
     </nav>
   );

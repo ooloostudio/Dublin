@@ -37,28 +37,29 @@ function Page() {
       <Waves />
       <Logos_1 />
       <Stats_3col />
-      <FeaturedContentComp
-        onAddedToQueue={function (item: HydratedContentItem): Promise<boolean | void> {
-          throw new Error('Function not implemented.');
-        }}
-        numberOfContentItems={3}
-      />
       <CallToActionWithLinks
-        headline="Explore Documentation and Resources"
-        description="Our developer documentation and tools cover everything you need to know to start building your new project. "
+        headline="Training and Certifications that Develop Your Skillsets and Fuel Your Success"
+        description="Browse our top categories"
         links={[
-          { text: 'Helium Developer Guide', linkUrl: 'https://developer.thoughtindustries.com/' },
+          { text: 'Webinar', linkUrl: 'https://developer.thoughtindustries.com/' },
           {
-            text: 'Storyook Documentation',
+            text: 'Leaders',
             linkUrl: 'https://thoughtindustries.github.io/helium/?path=/story/example-cart--base'
           },
-          { text: 'GraphQL Explorer', linkUrl: '/graphiql' },
+          { text: 'Growing your Businness', linkUrl: '/graphiql' },
           {
-            text: 'GraphQL Documentation',
+            text: 'Integrations',
             linkUrl: 'https://thoughtindustries.github.io/helium-graphql/'
           }
         ]}
       />
+      <FeaturedContentComp
+        onAddedToQueue={function (item: HydratedContentItem): Promise<boolean | void> {
+          throw new Error('Function not implemented.');
+        }}
+        numberOfContentItems={9}
+      />
+     
       <CallToActionParagraphs
         heading="Your source for learning, community and success."
         subheading="Find products, resources, and programs for every stage of your business journey."
