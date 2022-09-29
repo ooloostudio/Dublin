@@ -1,17 +1,22 @@
 import React from 'react';
+import shield from '../../renderer/assets/Shields.png';
 
 const CTA = (props: { headline: string; body: string; buttonUrl: string; buttonText: string }) => {
   return (
-    <div className="bg-black text-center pt-16 px-12 pb-10">
-      <div className="flex flex-col text-white text-3xl font-bold">{props.headline}</div>
-      <div className="max-w-md mx-auto">
-        <div className="flex flex-col text-gray-300 text-xl font-bold">{props.body}</div>
+    <div className="container flex bg-gradient-to-t from-slate-700 to-slate-900 rounded-2xl p-16">
+     <div className="flex flex-col">
+        <div className=" text-brandPrimary-300 text-xl font-bold py-4 sm:text-3xl">{props.headline}</div>
+        <div className=" text-gray-300 text-lg font-light leading-relaxed sm:text-sm">{props.body}</div>
+        <a href={props.buttonUrl}>
+          <button className="inline-flex items-center justify-center w-full px-8 py-4 my-8 text-lg font-medium leading-6 text-textPrimary-400 bg-brandSecondary-500 border border-transparent rounded-md md:w-auto hover:bg-brandSecondary-300 hover:animate-pulse focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 sm:text-sm">
+            {props.buttonText}
+          </button>
+        </a>
       </div>
-      <a href={props.buttonUrl}>
-        <button className="bg-white text-blue-900 font-normal py-2 px-4 rounded mx-auto mt-6">
-          {props.buttonText}
-        </button>
-      </a>
+      <div className="flex flex-col">
+        
+      </div>
+
     </div>
   );
 };
