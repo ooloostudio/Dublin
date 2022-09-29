@@ -11,7 +11,7 @@ import {
   PriceFormatFn
 } from '@thoughtindustries/catalog/src/types';
 import ItemLinkWrapper from '@thoughtindustries/catalog/src/variants/display-type-results/item-link-wrapper';
-import ItemAssetBlock from '@thoughtindustries/catalog/src/variants/display-type-results/item-asset-block';
+import ItemAssetBlock from './ItemAssetBlockCover';
 import ItemRibbon from '@thoughtindustries/catalog/src/variants/display-type-results/item-ribbon';
 import clsx from 'clsx';
 import { limitText } from '@thoughtindustries/catalog/src/variants/display-type-results/utilities';
@@ -42,7 +42,7 @@ const HeightEqualizerElementWrapper = ({
 };
 
 const ItemTitleBlock = ({ title }: { title: string }) => (
-  <div className="font-bold text-4xl leading-tight sm:text-lg">{title}</div>
+  <div className="font-bold text-4xl leading-tight sm:text-2xl md:text-xl">{title}</div>
 );
 
 const ItemSourceBlock = ({
@@ -55,7 +55,7 @@ const ItemSourceBlock = ({
   <HeightEqualizerElementWrapper name="source" className="text-sm text-gray-500">
     <p>
       {courseStartDate && (
-        <span className="flex text-md text-gray-500 font-semibold">{contentTypeLabel}</span>
+        <span className="flex text-md text-gray-500 ">{contentTypeLabel}</span>
       )}
     </p>
   </HeightEqualizerElementWrapper>
@@ -70,7 +70,7 @@ const ItemCtaBlock = ({
 }) => {
   if (isActive) {
     return (
-      <span className="border-none text-blue-500 rounded-sm cursor-pointer inline-block text-sm font-normal leading-normal m-0 p-0 relative text-center no-underline transition-colors ease-in-out duration-200 float-right h-auto hover:text-accent">
+      <span className="border-none text-brandPrimary-600 cursor-pointer inline-block text-sm font-light leading-normal  no-underline">
         {callToAction}
       </span>
     );
@@ -103,31 +103,32 @@ const DisplayTypeResultsGridItem = ({
     <li>
       <>
         <ItemLinkWrapper item={item} onClick={onClick}>
-          <div className="grid grid-cols-1 relative">
-            <div className="bg-white rounded-md drop-shadow-md">
+          <div className="grid grid-cols-1 relative h-[30rem]">
+            <div className="bg-white rounded-md drop-shadow-md hover:drop-shadow-2xl">
               {ribbon && <ItemRibbon ribbon={ribbon} attached attachedClassnames="-top-1" />}
-              <div className="relative">
+
+              <div className="absolute h-full -z-10">
                 <ItemAssetBlock asset={asset} />
               </div>
-              <div className="p-8 space-y-4">
-                {title && (
-                  <ItemTitleBlock
-                    title={title}
-                    courseStartDate={displayCourseStartDate}
-                    timeZone={timeZone}
-                    contentTypeLabel={contentTypeLabel}
-                  />
-                )}
-                <ItemSourceBlock
-                  contentTypeLabel={contentTypeLabel}
-                  courseStartDate={courseStartDate}
-                />
-                <div className="text-lg font-light text-textPrimary-200 sm:text-base md:text-sm">
-                  {description && limitText(description, 75)}
-                </div>
-                
-                <div className="text-base leading-none py-2">
-                  <ItemCtaBlock isActive={isActive} callToAction={callToAction} />
+
+              <div className="h-full flex flex-col justify-end  rounded-md">
+                <div className='bg-gradient-to-t from-surface-300 via-surface-100 p-8 rounded-md'>
+                  {title && (
+                    <ItemTitleBlock
+                      title={title}
+                      courseStartDate={displayCourseStartDate}
+                      timeZone={timeZone}
+                      contentTypeLabel={contentTypeLabel}
+                    />
+                  )}
+
+                  <div className="text-lg font-light text-textPrimary-200 sm:text-base md:text-sm">
+                    {description && limitText(description, 65)}
+                  </div>
+                  
+                  <div className="text-base leading-none py-2">
+                    <ItemCtaBlock isActive={isActive} callToAction={callToAction} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -160,7 +161,7 @@ const DisplayTypeResultsGrid = ({
 
   return (
     <HeightEqualizer>
-      <ul className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">{contentItems}</ul>
+      <ul className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">{contentItems}</ul>
     </HeightEqualizer>
   );
 };

@@ -1,7 +1,7 @@
 import { CatalogProps, CatalogProvider, CatalogResultsProps } from '@thoughtindustries/catalog';
 import React, { FC, useMemo } from 'react';
 import { usePageContext } from '../../renderer/usePageContext';
-import CatalogResults from '../CatalogAndAggreg/CatalogResults';
+import CatalogResults from '../CatalogAndAggreg/CatalogResultsHP';
 
 interface CatalogResultsWithLimitProps extends CatalogResultsProps {
   /** number of items to return */

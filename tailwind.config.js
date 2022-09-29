@@ -116,6 +116,7 @@ module.exports = {
           100: "#f3f4f6",
           800: "#3f3f46"
         },
+        
 
         accent: getInstanceSetting('accentColor', '#111111'),
         secondary: getInstanceSetting('secondaryColor', '#111111'),
