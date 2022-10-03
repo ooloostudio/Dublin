@@ -38,7 +38,7 @@ const FeaturedContentComp: FC<CatalogResultsWithLimitProps> = ({
         </div>
       </div>
       <a href="/catalog">
-        <button className="flex my-10 bg-blue-900 text-white font-bold py-3 px-5 rounded mx-auto">
+        <button className="flex mt-4 mb-10 bg-brandPrimary-900 text-white font-bold py-3 px-5 rounded mx-auto">
           View Full Catalog
         </button>
       </a>

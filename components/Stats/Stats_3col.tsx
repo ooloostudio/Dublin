@@ -3,7 +3,7 @@ import React from 'react';
 const Stats_3col = () => {
     return (
       <>
-    <div className="bg-surface-100 w-full">
+    <div className="bg-surface-100 w-full rounded-lg shadow-lg">
         <div className="container mx-auto flex flex-col gap-4 md:flex-row">
 
             <div className="relative flex flex-col items-center justify-between px-8 py-12 overflow-hidden" data-rounded="rounded-xl" data-rounded-max="rounded-full">
