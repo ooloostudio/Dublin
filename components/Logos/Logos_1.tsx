@@ -4,7 +4,7 @@ import React from 'react';
 const Logos1 = () => {
   return (
     <>
-    <div className=" w-full px-4 mx-auto sm:px-6 lg:px-8 bg-surface-100" >
+    <div className=" w-full pb-16 px-4 mx-auto sm:px-6 lg:px-8 bg-surface-100" >
         <p className='text-center py-4 text-brandPrimary-900'>TRUSTED BY THOUSANDS OF ORGANIZATIONS INCLUDING</p>
         <div className=" pt-8 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
             <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">

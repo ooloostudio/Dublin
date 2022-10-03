@@ -1,5 +1,5 @@
 import React from 'react';
-import shield from '../../renderer/assets/Shields.png';
+import shield from '../../renderer/assets/Shield.png';
 
 const CTA = (props: { headline: string; body: string; buttonUrl: string; buttonText: string }) => {
   return (
@@ -14,7 +14,7 @@ const CTA = (props: { headline: string; body: string; buttonUrl: string; buttonT
         </a>
       </div>
       <div className="flex flex-col">
-        
+        <img src={shield} alt={"logo"}/> 
       </div>
 
     </div>
