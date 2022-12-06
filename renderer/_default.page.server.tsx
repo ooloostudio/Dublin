@@ -35,7 +35,7 @@ async function render(pageContext: PageContext) {
   const desc = (documentProps && documentProps.description) || 'App using Vite + vite-plugin-ssr';
 
   return escapeInject`<!DOCTYPE html>
-    <html lang="en" class="dark">
+    <html lang="en">
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
